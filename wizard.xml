@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+	     
+    <wizard  id="wizard_l10n_fr_extourne"
+	     string="Extourne" 
+	     model="account.move.line"
+	     name="l10n.fr.extourne.extourne"
+	     />
+
+
+  </data>
+</openerp>
