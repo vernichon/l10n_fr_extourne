@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2008 JAILLET Simon - CrysaLEAD - www.crysalead.fr
+# Copyright (c) 2014- eric@vernichon.fr
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -25,7 +25,6 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
 ##############################################################################
-
 import extourne
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

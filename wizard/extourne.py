@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2009 SISTHEO - eric@everlibre.fr
+# Copyright (c) 2014- eric@vernichon.fr
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -28,27 +28,6 @@
 
 import time
 from osv import osv, fields
-# 
-# moves_form = '''<?xml version="1.0"?>
-# <form string="Select move">
-#     <field name="move_id"  on_change="onchange_move_id(move_id)" colspan="4"/>
-#     <field name="journal_id" colspan="4"/>
-#     <field name="period_id" colspan="4"/>
-# </form>'''
-# 
-# moves_fields = {
-#     'move_id': {'string': 'Modfication move', 'type': 'many2one', 'relation': 'account.move', 'required': True},
-#     'journal_id': {'string': 'Journal', 'type': 'many2one', 'relation': 'account.journal', 'required': True},
-#     'period_id': {'string': 'Period', 'type': 'many2one', 'relation': 'account.period', 'required': True},
-# }
-# def utf(val):
-#         if isinstance(val, str):
-#              str_utf8 = val
-#         elif isinstance(val, unicode):
-#              str_utf8 = val.encode('utf-8')
-#         else:
-#              str_utf8 = str(val)
-#         return str_utf8
  
 class update_account_move(osv.osv_memory):
     _name = "update.account.move"
