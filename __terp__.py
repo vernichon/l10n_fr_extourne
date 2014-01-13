@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2009 SISTHEO
+# Copyright (c) 2014- eric@vernichon.fr
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -28,18 +28,18 @@
 {
     "name" : "France - Extourne de pièces comptable",
     "version" : "0.1",
-    "author" : "SISTHEO",
+    "author" : "Everlibre",
     "website": "http://www.openerp.com",
     "category" : "",
     "description": """.
 
-Credits: Sistheo Zeekom CrysaLEAD
+Credits: Everlibre
 """,
-    "depends" : ['base', 'account', 'account_chart'],
+    "depends" : ['base', 'account'],
     "init_xml" : [
     ],
     "update_xml" : [
-        "wizard.xml",
+   'view/update_move.xml'
     ],
     "demo_xml" : [],
     "active": False,
