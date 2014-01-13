@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_update_account_move" model="ir.ui.view">
+			<field name="name">update.account.move.form</field>
+			<field name="model">update.account.move</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+
+				<form string="Select move">
+					<field name="move_id"  on_change="onchange_move_id(move_id)" colspan="4"/>
+					<field name="journal_id" colspan="4"/>
+					<field name="period_id" colspan="4"/>
+					<field name="date" colspan="4"/>
+					<group col="4" colspan="4">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button icon="gtk-ok" name="cancel_move" string="Cancel Move" type="object"/>
+                        <button icon="gtk-ok" name="move_move" string="Move move" type="object"/>
+                        <button icon="gtk-ok" name="inverse_move" string="Inverse Move" type="object"/>
+                    </group>
+
+				</form>
+			</field>
+		</record>
+        <record id="action_update_account_move" model="ir.actions.act_window">
+            <field name="name">Modify Move</field>
+             
+            <field name="res_model">update.account.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="src_model">account.move</field>
+ 			<field name="context">{'move_id':active_id}</field>
+            <field name="target">new</field>
+        </record>
+        <record model="ir.values" id="ir_action_update_account_move">
+            <field name="key2">client_action_multi</field>
+            <field name="model">account.move</field>
+            <field name="name">Update Move</field>
+            <field name="value" eval="'ir.actions.act_window,%s'%action_update_account_move" />
+            <field name="object" eval="True" />
+        </record>
+
+        <record id="action_update_account_move_line" model="ir.actions.act_window">
+            <field name="name">Modify Move</field>
+             
+            <field name="res_model">update.account.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="src_model">account.move.line</field>
+ 			<field name="context">{'move_line_id':active_id}</field>
+            <field name="target">new</field>
+        </record>
+        <record model="ir.values" id="ir_action_update_account_move_line">
+            <field name="key2">client_action_multi</field>
+            <field name="model">account.move.line</field>
+            <field name="name">Update Move</field>
+            <field name="value" eval="'ir.actions.act_window,%s'%action_update_account_move_line" />
+            <field name="object" eval="True" />
+        </record>
+
+        <menuitem icon="STOCK_PRINT" action="action_update_account_move" id="menu_action_update_account_move" parent="jasper_server.jasper"/>
+        <act_window 
+        	 	 context="{'move_id':active_id}"
+        		 id="act_update_account_move" 
+        		 name="Update move" 
+        		 res_model="update.account.move" 
+        		 src_model="account.move"
+        		 view_type="form"
+        		 view_mode="form"
+        		 target="new" 
+        		 />
+        <act_window 
+        	 	 context="{'move_line_id':active_id}"
+        		 id="act_update_account_move_line" 
+        		 name="Update move" 
+        		 res_model="update.account.move" 
+        		 src_model="account.move.line"
+        		 view_type="form"
+        		 view_mode="form"
+        		 target="new" 
+        		 />
+	</data>
+</openerp>
